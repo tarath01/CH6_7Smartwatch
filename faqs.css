@@ -14,10 +14,10 @@ h2 {
     font-size: 120%;
     padding: 0 0 0 1.5em;
     cursor: pointer;
-    background: url(assets/plus.png) no-repeat left center;
+    background: url(images/plus.png) no-repeat left center;
 }
 h2.minus {
-    background: url(assets/minus.png) no-repeat left center;
+    background: url(images/minus.png) no-repeat left center;
 }
 a {
     color: black; 
