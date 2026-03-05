@@ -1,11 +1,11 @@
 /*
 =================================================
-Smart Watch FAQ's
+Title: Smart Watch FAQ's
 Author: Taylor Rath
 Date: 03/03/2026
 GitHub: https://github.com/tarath01/CH6_7Smartwatch
 Program Summary: FAQ and Image Swap to create a Smartwatch Pro FAQ
-page that includes image swap.  It must display the correct image
+page that includes image swap.  It displays the correct image
 based on the FAQ selected or reset to the default image when all
 FAQ are closed.
 ===================================================
@@ -19,11 +19,11 @@ FAQ are closed.
 //3. faqImageOrigAtl = Save the main FAQ image's default 'alt' text to a variable using the alt property
 //4. h2s = Find all the H2 elements inside the FAQ section and save them as a list using querySelectorAll "#faqs h2"
 
-
 const faqImage = document.querySelector("#faq_image");
 const h2s = document.querySelectorAll("#faqs h2");
-let faqImageOrigSrc = faqImage.src;
-let faqImageOrigAlt = faqImage.alt;
+const faqImageOrigSrc = faqImage.src;
+const faqImageOrigAlt = faqImage.alt;
+
 
 // SETUP THE EVENT HANDLER (When an H2 is clicked)
 const toggleVisibility = evt => {
@@ -35,28 +35,16 @@ const toggleVisibility = evt => {
     /*   2. Create a variable called 'allClosed' and set it to FALSE
           this will be used to reset the default image if all FAQs are closed*/
 
-    /* 3. LOOP through every H2 heading (h2s) in your saved list*/
     let allClosed = false;
-
+    /* 3. LOOP through every H2 heading (h2s) in your saved list*/
     for (let h2 of h2s) {
-        let div = h2.nextElementSibling;
-
-        if (h2 === evt.currentTarget) {
-
-            if (h2.classList.contains("minus")) {
-                allClosed = true;
-
-                h2.classList.toggle("minus");
-                div.classList.toggle("open");
-            }
-            if (allClosed === true) {
-                faqImage.src = faqImageOrigSrc;
-                faqImage.alt = faqImageOrigAlt;
-
-                evt.preventDefault();
-            }
-        }
+        h2.addEventListener("click", toggleVisibility);
     }
+    h2.classList.toggle("minus");
+    div.classList.toggle("open");
+
+
+
     /*   IF the current heading in the loop is the one the user clicked:
            - Check if this heading already has the "minus" class.
              If it does, change your 'allClosed' tracker to TRUE.
@@ -77,12 +65,16 @@ const toggleVisibility = evt => {
           - Change the main FAQ image's alt text back to the original default alt text.*/
     /*  5. Prevent the browser's default click behavior.*/
     // prevents default click behavior
+}
+
 // INITIALIZATION - WHEN THE PAGE LOADS
     document.addEventListener("DOMContentLoaded", () => {
         for (let h2 of h2s) {
             h2.addEventListener("click", toggleVisibility);
         }
+
+        h2s[0].focus();
     });
-}
+
 //   1. LOOP through your saved list of all h2 headings (hs2).
 //  2. For each heading, attach a "click" event listener that triggers the 'toggleVisibility' function.
