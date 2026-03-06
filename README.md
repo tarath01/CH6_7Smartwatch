@@ -11,12 +11,20 @@
 --------------------------------------
 
 ## Summary
-
+This FAQ and Image Swap is to create a Smartwatch Pro FAQ
+page. It displays the correct image
+based on the question selected, or it resets to the default image when all
+questions are closed.
 
 -------------------------
 
 ## New Concepts
 
+- Get Attributes
+- Control Elements
+- Preload Images
+- nextElementSibling
+- src & alts
 
 --------------------
 ## Screenshots
@@ -24,15 +32,15 @@
 ------------------------------------
 
 ### Main Page
-![Main Page]()
+![Main Page](images/mainpage.png)
 
 ---------------------------------
 ### Water Proof
-![Waterproof]()
+![Waterproof](images/water.png)
 
 ----------------------------------
 ### Heart Rate
-![Heart Rate]()
+![Heart Rate](images/tracker.png)
 
 ------------------------------------
 ## Maintainers
